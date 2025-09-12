@@ -40,7 +40,7 @@ Experiencia inmersiva: Se puede combinar con video o imágenes de fondo para sim
 
 
 
-git clone https://github.com/TU-USUARIO/simulador-despegue.git
+git clone https://github.com/Zander1612/simulador-despegue.git
 
 2. Abre el archivo index.html en tu navegador favorito.
 
