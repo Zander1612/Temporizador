@@ -4,12 +4,12 @@ const video = document.getElementById("video");
 const videoContainer = document.querySelector(".video-container");
 
 btn.addEventListener("click", () => {
-  let tiempo = 5;
+  let tiempo = 20;
   contador.textContent = tiempo;
 
   const intervalo = setInterval(() => {
-    tiempo--;
-    if (tiempo > 0) {
+    tiempo--2;
+    if (tiempo > 0 ) {
       contador.textContent = tiempo;
     } else {
       clearInterval(intervalo);
