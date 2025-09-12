@@ -1,0 +1,186 @@
+/* ===== Fondo ===== */
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #111111;
+  background-image: linear-gradient(
+    32deg,
+    rgba(8, 8, 8, 0.74) 30px,
+    transparent
+  );
+  background-size: 60px 60px;
+  background-position: -5px -5px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* ===== Simulador ===== */
+.simulador {
+  text-align: center;
+  color: white;
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  width: 100%;
+}
+
+/* ===== Títulos y contador ===== */
+.simulador h1 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+#contador {
+  font-size: 4rem;
+  margin: 20px 0;
+  font-weight: bold;
+}
+
+/* ===== Animación "DESPEGUE" ===== */
+.despegue {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #ff3c00;
+  animation: parpadeo 1s infinite alternate;
+}
+
+@keyframes parpadeo {
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0.5; transform: scale(1.1); }
+}
+
+/* ===== Botón despegue (Uiverse) ===== */
+.btn-class-name {
+  --primary: 255, 90, 120;
+  --secondary: 150, 50, 60;
+  width: 70px;
+  height: 70px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  outline: 10px solid rgb(var(--primary), .5);
+  border-radius: 100%;
+  position: relative;
+  transition: .3s;
+  margin-bottom: 20px;
+}
+
+.btn-class-name .back {
+  background: rgb(var(--secondary));
+  border-radius: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.btn-class-name .front {
+  background: linear-gradient(0deg, rgba(var(--primary), .6) 20%, rgba(var(--primary)) 50%);
+  box-shadow: 0 .5em 1em -0.2em rgba(var(--secondary), .5);
+  border-radius: 100%;
+  position: absolute;
+  border: 1px solid rgb(var(--secondary));
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-family: inherit;
+  transform: translateY(-15%);
+  transition: .15s;
+  color: rgb(var(--secondary));
+}
+
+.btn-class-name:active .front {
+  transform: translateY(0%);
+  box-shadow: 0 0;
+}
+
+/* ===== Video ===== */
+.video-container {
+  margin-top: 20px;
+  display: none; /* se muestra solo en despegue */
+}
+
+video {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+}
+
+/* ===== Footer GitHub ===== */
+footer {
+  position: fixed;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.github-btn {
+  background: transparent;
+  position: relative;
+  padding: 5px 15px;
+  display: flex;
+  align-items: center;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid rgb(36, 41, 46);
+  border-radius: 25px;
+  overflow: hidden;
+  color: rgb(36, 41, 46);
+  transition: color 0.3s 0.1s ease-out;
+}
+
+.github-btn span {
+  margin: 10px;
+}
+
+.github-btn::before {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  margin: auto;
+  content: "";
+  border-radius: 50%;
+  display: block;
+  width: 20em;
+  height: 20em;
+  left: -5em;
+  transition: box-shadow 0.5s ease-out;
+  z-index: -1;
+}
+
+.github-btn:hover {
+  color: #fff;
+}
+
+.github-btn:hover::before {
+  box-shadow: inset 0 0 0 10em rgb(36, 41, 46);
+}
+
+/* ===== Media Queries ===== */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .simulador h1 { font-size: 1.8rem; }
+  #contador, .despegue { font-size: 3rem; }
+  .btn-class-name { width: 60px; height: 60px; }
+  .github-btn { font-size: 15px; }
+}
+
+/* Móviles */
+@media (max-width: 480px) {
+  .simulador h1 { font-size: 1.5rem; }
+  #contador, .despegue { font-size: 2.5rem; }
+  .btn-class-name { width: 55px; height: 55px; }
+  video { max-width: 100%; }
+  .github-btn { font-size: 14px; padding: 5px 10px; }
+}
