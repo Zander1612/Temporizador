@@ -8,7 +8,6 @@ btn.addEventListener("click", () => {
   contador.textContent = tiempo;
 
   const intervalo = setInterval(() => {
-    tiempo--;
     tiempo = tiempo -2
     if (tiempo > 0 ) {
       contador.textContent = tiempo;
